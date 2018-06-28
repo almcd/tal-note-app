@@ -1,0 +1,226 @@
+/* Document */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+/* default font styles */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.375px;
+  color: #3e3e3e;
+}
+
+/* keyboard layout */
+#onScreenKeyboard {
+  margin: 0 auto 15px; auto;
+  max-width: 850px;
+}
+
+#onScreenKeyboard .button, #onScreenKeyboard .spacer {
+  margin: 1px;
+  
+}
+
+.keyboardInputLabel {
+  display: block;
+  text-align: center;
+  margin: 10px auto 0 auto;
+  padding: 10px;
+  min-height: 30px;
+  max-width: 850px;
+  border-bottom: 1px solid #333;
+}
+
+/* Layout */
+.headerContainer {
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #eeedf0;
+}
+
+/* Default List Widget Styles */
+.horizontallist, .verticallist {
+  position: relative;
+}
+
+.horizontallist .listitem {
+  display: inline-block;
+}
+
+/* nested lists - use #IDs instead for more complex layouts */
+.verticallist .horizontallist .listitem {
+  display: inline-block;
+}
+
+.verticallist .listitem {
+  display: block;
+  position: relative;
+}
+
+/* nested lists - use #IDs instead for more complex layouts */
+.horizontallist .verticallist .listitem {
+  display: block;
+}
+
+/* navigation title */
+.headerContainer .mainTitle {
+  background-color: #333;
+  color: #fff;
+}
+
+/* error title */
+.errorTitle {
+  display: block;
+  color: #a2a2a2;
+  margin: 15px 0 15px 0;
+  text-align: center;
+}
+
+.errorButton {
+  margin 0 auto 0 auto;
+  max-width: 300px;
+}
+
+/* note view */
+.note-full {
+  display: block;
+  text-align: center;
+  margin: 10px auto 15px auto;
+  padding: 10px;
+  min-height: 30px;
+  max-width: 850px;
+  border-bottom: 1px solid #333;
+}
+
+/* carousel */
+.carouselItem {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* button styles */
+.button {
+  background-color: #DCDCDC;
+  display: block;
+  text-align: center;
+  padding: 8px;
+  margin: 0 auto 0 auto;
+}
+
+.button.buttonFocussed{
+   background: #a2a2a2;
+}
+
+.save-button {
+  margin-top: 30px;
+  max-width: 300px;
+  background-color: #7fa251;
+}
+
+.save-button.buttonFocussed {
+  background-color: #91c350
+}
+
+/* main menu */
+#mainMenuList {
+  padding-top: 55px;
+}
+
+#mainMenuList .label {
+  padding: 15px 20px 15px 100px;
+}
+
+#mainMenuList .button {
+  min-width: 166px;
+  padding: 15px 0 15px 20px;
+  border-right: 2px solid #e5e5e5;
+  text-align: center;
+}
+
+/* default carousel styles */
+.carouselmask {
+  overflow: hidden;
+}
+
+.carouselwidgetstrip {
+  position: relative;
+}
+
+.carouselwidgetstrip.vertical > .carouselItem {
+  display: block;
+}
+
+.carouselwidgetstrip.horizontal > .carouselItem {
+  display: inline-block;
+}
+
+/* keyboard */
+.keyboard .row .button,
+.keyboard .row .spacer {
+  margin: 0; padding: 0;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  line-height: 40px;
+  text-align: center;
+}
+
+/* blinking cursor */
+.blinking-cursor {
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}

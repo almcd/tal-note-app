@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Jasmine Spec Runner</title>
+
+    <% css.forEach(function(style){ %>
+    <link rel="stylesheet" type="text/css" href="<%= style %>">
+    <% }) %>
+
+    <script type="text/javascript">
+        var require = {
+            paths: {
+                "antie": "../../script",
+                "fixtures": "../fixtures"
+            }
+        };
+
+        window.antie = {
+            framework: {
+                deviceConfiguration: {"modules":{"base":"antie\/devices\/browserdevice","modifiers":["antie\/devices\/anim\/styletopleft","antie\/devices\/media\/html5","antie\/devices\/data\/json2","antie\/devices\/net\/default", "antie\/devices\/parentalguidance\/appdefaultpghandler"]},"mediasets":{"tv":"stb-all-h264","radio":"stb-aac"},"streaming":{"video":{"mediaSelectorAPI":"jsfunc","mediaSelectorURI":"https:\/\/ipsecure.stage.bbc.co.uk\/mediaselector\/4\/jsfunc\/stream\/%vpid%\/%callback%","mediaURIFormat":"%href%","supported":[{"protocols":["http"],"encodings":["h264"],"maximumBitRate":2800,"maximumVideoLines":1080}]},"audio":{"mediaSelectorAPI":"jsfunc","mediaSelectorURI":"https:\/\/ipsecure.stage.bbc.co.uk\/mediaselector\/4\/jsfunc\/stream\/%vpid%\/%callback%","mediaURIFormat":"%href%","supported":[{"protocols":["http"],"encodings":["aac"]}]}},"input":{"map":{"13":"ENTER","37":"LEFT","38":"UP","39":"RIGHT","40":"DOWN","83":"SUBTITLE","73":"INFO"}},"accessibility":{"captions":{"supported":["application\/ttaf+xml"]}},"layouts":[{"width":999999,"height":999999,"module":"fixtures\/layouts\/toobig","classes":["toobig"]},{"width":960,"height":540,"module":"fixtures\/layouts\/default","classes":["browserdevice540p"]}],"deviceConfigurationKey":"devices-html5-1","widgets":{"horizontalprogress":{"animate":false},"componentcontainer":{"fade":false},"horizontalcarousel":{"fade":true,"bindDelay":10}},"components":[]}
+            }
+        };
+    </script>
+
+    <% with (scripts) { %>
+    <% [].concat(jasmine, vendor, helpers).forEach(function(script){ %>
+    <script src="<%= script %>"></script>
+    <% }) %>
+    <% }; %>
+
+    <script type="text/javascript">
+    require(
+        ['<%= [].concat(scripts.specs,scripts.reporters).join("','") %>'],
+        function(){
+
+            registerTestsWithJasmine();
+
+            var jasmineEnv = jasmine.getEnv();
+            jasmineEnv.updateInterval = 1000;
+
+            var htmlReporter = new jasmine.HtmlReporter();
+
+            jasmineEnv.addReporter(htmlReporter);
+
+            jasmineEnv.specFilter = function(spec) {
+                return htmlReporter.specFilter(spec);
+            };
+
+            var currentWindowOnload = window.onload;
+
+            window.onload = function() {
+                if (currentWindowOnload) {
+                    currentWindowOnload();
+                }
+                execJasmine();
+            };
+
+            function execJasmine() {
+                jasmineEnv.execute();
+            }
+        }
+    );
+    </script>
+</head>
+<body></body>
+</html>

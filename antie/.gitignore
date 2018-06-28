@@ -1,0 +1,13 @@
+.project
+*sublime-*
+.DS_Store
+/.settings
+libpeerconnection.log
+*.iml
+node_modules
+.idea
+static/script-tests/jasmine/WebRunner.html
+.grunt
+jsdoc/index.html
+jsdoc/files.html
+jsdoc/symbols
